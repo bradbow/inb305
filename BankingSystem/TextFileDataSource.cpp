@@ -7,6 +7,8 @@
 #include <string>
 #include "Utils.h"
 
+// comment here
+
 using namespace std;
 
 // prototypes
@@ -32,6 +34,9 @@ TextFileDataSource::TextFileDataSource(std::wstring rgstrFileNames[])
 
 	// Read txt files and populate collections
 	ReadTextFilesAndConstructObjects(rgstrFileNames);
+
+	int one = TextFileDataSource::ACCOUNTS;
+	std::string strTemp;
 
 }
 
