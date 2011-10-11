@@ -52,7 +52,7 @@ TypeConverter::operator bool()
 	}
 	else
 	{
-		//TODO think of soemthing better here...
+		//TODO Brad: think of soemthing better here...
 		return true;
 	}
 }

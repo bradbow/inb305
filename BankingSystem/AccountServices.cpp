@@ -98,7 +98,7 @@ list<Account*> AccountServices::getCustomerAccounts(int customerID){
 
 	Customer customer(customerID, "password", "name", "address", "phoneNumber");
 	//Customer customer = (Customer*)(getUser(userID));
-	list<int> accountNumbers = customer.getAccounts();
+	set<int> accountNumbers = customer.getAccounts();
 	list<Account*> accounts;
 	// retrieve the matching account for each of the the accountNumbers and add to accounts
 	return accounts;

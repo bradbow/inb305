@@ -75,14 +75,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="BankClerks.txt" />
+    <None Include="CreditAccounts.txt" />
+    <None Include="Customers.txt" />
+    <None Include="HomeLoanAccounts.txt" />
     <None Include="ReadMe.txt" />
+    <None Include="SavingsAccounts.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="AccountServices.cpp" />
     <ClCompile Include="CreditAccount.cpp" />
     <ClCompile Include="DataInterface.cpp" />
-    <ClCompile Include="DataMap.cpp" />
     <ClCompile Include="HomeLoanAccount.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SavingsAccount.cpp" />

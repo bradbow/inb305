@@ -64,7 +64,7 @@ void Customer::setPhoneNumber(string phoneNumber){
 // precondition: none
 // postcondition: returns account no's
 // as list
-list <int> Customer::getAccounts(void){
+set <int> Customer::getAccounts(void){
 
 	return _accounts;
 }
@@ -72,7 +72,7 @@ list <int> Customer::getAccounts(void){
 // postcondition: accountID addded to accounts
 bool Customer::addAccount(int accountID){
 
-	_accounts.push_back(accountID);
+	_accounts.insert(accountID);
 	return true;
 }
 // precondition: valid accountID passed in
@@ -80,7 +80,8 @@ bool Customer::addAccount(int accountID){
 // list
 bool Customer::removeAccount(int accountID){
 
-	_accounts.remove(accountID);
+	// TODO Jeff: does this throw error if not in set?
+	_accounts.erase(_accounts.find(accountID));
 	return true;
 }
 // precondition: none
@@ -88,7 +89,7 @@ bool Customer::removeAccount(int accountID){
 // in accounts, otherwise false
 bool Customer::hasAccount(int accountID){
 
-	//TODO add iterator code here
+	//TODO Jeff: add iterator code here
 	return true;
 }
 // precondition: none

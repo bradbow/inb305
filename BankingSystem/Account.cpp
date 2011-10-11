@@ -11,6 +11,7 @@ Account::Account(int accountID,
 				string accountName,
 				double interestRate, 
 				double balance){}
+// TODO Jeff: nothing happening in constructor?
 
 // destructor
 // precondition: none

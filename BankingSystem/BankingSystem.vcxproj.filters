@@ -74,6 +74,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="Customers.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
+    <None Include="BankClerks.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
+    <None Include="SavingsAccounts.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
+    <None Include="CreditAccounts.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
+    <None Include="HomeLoanAccounts.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UserServices.cpp">
@@ -111,9 +126,6 @@
     </ClCompile>
     <ClCompile Include="DataInterface.cpp">
       <Filter>Persistence\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DataMap.cpp">
-      <Filter>Collections\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TextFileDataSource.cpp">
       <Filter>Persistence\Source Files</Filter>

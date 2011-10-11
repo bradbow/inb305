@@ -6,7 +6,7 @@
 #include "user.h"
 #include <string>
 using std::string;
-#include <list>
+#include <set>
 using namespace std;
 
 #ifndef _CUSTOMER_H
@@ -53,7 +53,7 @@ public:
 	// precondition: none
 	// postcondition: returns account no's
 	// as list
-	list <int> getAccounts(void);
+	set <int> getAccounts(void);
 	// precondition: valid accountID passed in
 	// postcondition: accountID addded to accounts
 	bool addAccount(int accountID);
@@ -73,7 +73,7 @@ private:
 	string _name;
 	string _address;
 	string _phoneNumber;
-	list <int > _accounts;
+	set <int > _accounts;
 };
 #endif
 

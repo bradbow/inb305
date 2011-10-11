@@ -1,7 +1,8 @@
 #pragma once
-
-// forward class declaration
-class DataMap;
+#include "DataMap.h"
+#include "User.h"
+#include "Account.h"
+#include "Transaction.h"
 
 class DataSource
 {
@@ -18,13 +19,13 @@ public:
 	virtual ~DataSource(void){};
 
 	// member functions: these are the functionalities all valid data sources must provide
-	virtual bool persistUsers(DataMap* users) = 0;
-	virtual bool persistAccounts(DataMap* accounts) = 0;
-	virtual bool persistTransactions(DataMap* transactions) = 0;
+	virtual bool persistUsers(DataMap<User>* users) = 0;
+	virtual bool persistAccounts(DataMap<Account>* accounts) = 0;
+	virtual bool persistTransactions(DataMap<Transaction>* transactions) = 0;
 	virtual bool persistLastUserId(int userName) = 0;
-	virtual DataMap* getUsersCollection() = 0;
-	virtual DataMap* getAccountsCollection() = 0;
-	virtual DataMap* getTransactionsCollection() = 0;
+	virtual DataMap<User>* getUsersCollection() = 0;
+	virtual DataMap<Account>* getAccountsCollection() = 0;
+	virtual DataMap<Transaction>* getTransactionsCollection() = 0;
 	virtual int getLastUserId() = 0;
 
 };
