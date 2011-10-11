@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Users">
+      <UniqueIdentifier>{05573c82-af97-40db-bb4c-299a87423ccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Users\Header Files">
+      <UniqueIdentifier>{05fdbe8e-218b-4b6a-81ff-1d68eb670940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Users\Source Files">
+      <UniqueIdentifier>{01c7e215-b158-48c5-9029-e497519a22c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Accounts">
+      <UniqueIdentifier>{d4f51f5e-6c06-4a57-b47b-470798e4d8b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Accounts\Header Files">
+      <UniqueIdentifier>{aea467c7-61c8-4a73-be14-23070d392cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Accounts\Source Files">
+      <UniqueIdentifier>{01d08975-50bc-43cf-a4ef-b04474f6bdd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transactions">
+      <UniqueIdentifier>{43b9cfbb-9bd9-4089-b42b-d360ffaf0326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transactions\Header Files">
+      <UniqueIdentifier>{5c97f765-50f9-459d-b725-54e6d545b2d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transactions\Source Files">
+      <UniqueIdentifier>{4c8b91eb-e053-485a-a3e5-d496692bf81a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Persistence">
+      <UniqueIdentifier>{5f7194b5-aa94-4ddc-acb7-1d2908ca44bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Persistence\Header Files">
+      <UniqueIdentifier>{ef114f46-6d15-4b50-83d2-a70fe5e660d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Persistence\Source Files">
+      <UniqueIdentifier>{dd9d6c8c-af9e-4906-9f1c-02fafed975b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{abd150c9-2936-4fba-b54f-91990d06ec8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Header Files">
+      <UniqueIdentifier>{17bc9b39-aaf2-403b-8a1c-f9673b06e8cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Source Files">
+      <UniqueIdentifier>{29a36bef-be99-4092-8caf-c71dd587e373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Persistence\Data Files">
+      <UniqueIdentifier>{4ecc5869-4f55-488f-adea-8040c4981a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collections">
+      <UniqueIdentifier>{ba8037d5-f921-40f7-b378-3c4381b674e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collections\Header Files">
+      <UniqueIdentifier>{5cceb572-730b-4ab5-b564-e3b649b610aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collections\Source Files">
+      <UniqueIdentifier>{caf26a01-26fb-476f-9531-566f6c7fa958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{15e0fa65-94fa-495c-9859-c42592a5bcd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Header Files">
+      <UniqueIdentifier>{5c2e52a0-e91a-4fb0-8734-4bbbe166da5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Source Files">
+      <UniqueIdentifier>{d7808c9e-824c-4e68-b458-de83bf296da4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UserServices.cpp">
+      <Filter>Users\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Users\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Account.cpp">
+      <Filter>Accounts\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountServices.cpp">
+      <Filter>Accounts\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transaction.cpp">
+      <Filter>Transactions\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SavingsAccount.cpp">
+      <Filter>Accounts\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditAccount.cpp">
+      <Filter>Accounts\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeLoanAccount.cpp">
+      <Filter>Accounts\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankClerk.cpp">
+      <Filter>Users\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Customer.cpp">
+      <Filter>Users\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataInterface.cpp">
+      <Filter>Persistence\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataMap.cpp">
+      <Filter>Collections\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFileDataSource.cpp">
+      <Filter>Persistence\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="User.h">
+      <Filter>Users\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserServices.h">
+      <Filter>Users\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Account.h">
+      <Filter>Accounts\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountServices.h">
+      <Filter>Accounts\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transaction.h">
+      <Filter>Transactions\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SavingsAccount.h">
+      <Filter>Accounts\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditAccount.h">
+      <Filter>Accounts\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeLoanAccount.h">
+      <Filter>Accounts\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Customer.h">
+      <Filter>Users\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BankClerk.h">
+      <Filter>Users\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataInterface.h">
+      <Filter>Persistence\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSource.h">
+      <Filter>Persistence\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataMap.h">
+      <Filter>Collections\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFileDataSource.h">
+      <Filter>Persistence\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BankingSystem.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
