@@ -34,11 +34,9 @@ public:
 	virtual bool persistUsers(DataMap<User>* users);
 	virtual bool persistAccounts(DataMap<Account>* accounts);
 	virtual bool persistTransactions(DataMap<Transaction>* transactions);
-	virtual bool persistLastUserId(int userName);
 	virtual DataMap<User>* getUsersCollection(){return _users;}
 	virtual DataMap<Account>* getAccountsCollection(){return _accounts;}
 	virtual DataMap<Transaction>* getTransactionsCollection(){return _transactions;}
-	virtual int getLastUserId(){return m_nLastUserId;}
 
 protected: 
 
@@ -55,7 +53,6 @@ protected:
 	void ConstructAndAddCreditAccount(string line);
 	void ConstructAndAddHomeLoanAccount(string line);
 	void ConstructAndAddTransaction(string line);
-	void ReadAndSetLastUserId(string line);
 
 	// last user id
 	int m_nLastUserId;

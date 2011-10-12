@@ -35,7 +35,7 @@ SavingsAccount *AccountServices::createSavingsAccount (int accountID, string acc
 								balance);
 }
 
-// precondition: valid parameters passed in
+// precondition: valid parameters passed in 
 // postcondition: a credit account is created and returned
 CreditAccount *AccountServices::createCreditCardAccount (int accountID, string accountName, 
                                    double interestRate, double balance,

@@ -22,11 +22,9 @@ public:
 	virtual bool persistUsers(DataMap<User>* users) = 0;
 	virtual bool persistAccounts(DataMap<Account>* accounts) = 0;
 	virtual bool persistTransactions(DataMap<Transaction>* transactions) = 0;
-	virtual bool persistLastUserId(int userName) = 0;
 	virtual DataMap<User>* getUsersCollection() = 0;
 	virtual DataMap<Account>* getAccountsCollection() = 0;
 	virtual DataMap<Transaction>* getTransactionsCollection() = 0;
-	virtual int getLastUserId() = 0;
 
 };
 

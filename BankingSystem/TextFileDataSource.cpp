@@ -27,8 +27,6 @@ TextFileDataSource::TextFileDataSource(std::string rgstrFileNames[])
 	m_pfns[SAVINGS_ACCOUNTS] = &TextFileDataSource::ConstructAndAddSavingsAccount;
 	m_pfns[CREDIT_CARD_ACCOUNTS] = &TextFileDataSource::ConstructAndAddCreditAccount;
 	m_pfns[HOME_LOAN_ACCOUNTS] = &TextFileDataSource::ConstructAndAddHomeLoanAccount;
-	m_pfns[TRANSACTIONS] = &TextFileDataSource::ReadAndSetLastUserId;
-	m_pfns[LAST_USER_ID] = &TextFileDataSource::ReadAndSetLastUserId;
 
 	// Read txt files and populate collections
 	ReadTextFilesAndConstructObjects(rgstrFileNames);
@@ -57,10 +55,6 @@ bool TextFileDataSource::persistTransactions(DataMap<Transaction>* transactions)
 	return true;
 }
 
-bool TextFileDataSource::persistLastUserId(int userId)
-{
-	return true;
-}
 
 
 // --------------------------------------------------------------------------------------------- //
@@ -245,10 +239,6 @@ void TextFileDataSource::ConstructAndAddHomeLoanAccount(string line)
 void TextFileDataSource::ConstructAndAddTransaction(string line)
 {
 
-}
-
-void TextFileDataSource::ReadAndSetLastUserId(string line)
-{
 }
 
 // --------------------------------------------------------------------------------------------- //
