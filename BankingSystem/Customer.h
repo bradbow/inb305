@@ -68,12 +68,14 @@ public:
 	// precondition: none
 	// postcondition: returns true if accounts is not empty
 	bool hasAcocunt(void);
+	string operator<<(const Customer &rhs);
 
 private:
 	string _name;
 	string _address;
 	string _phoneNumber;
 	set <int > _accounts;
+	static const int NUM_FIELDS = 5;
 };
 #endif
 

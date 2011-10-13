@@ -54,6 +54,7 @@ public:
 	// is less than balance
 	// postcondition: balance decremented by amount
 	void decrementBalance(double amount);
+	string operator<< (const HomeLoanAccount &rhs);
 
 private:
 	string _propertyAddress;

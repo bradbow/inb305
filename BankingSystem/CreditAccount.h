@@ -39,6 +39,7 @@ public:
 	// precondition: valid amount passed in
 	// postcondition: balance decremented by amount
 	void decrementBalance(double amount);
+	string operator<< (const CreditAccount &rhs);
 
 private:
 	double _overdraftLimit;

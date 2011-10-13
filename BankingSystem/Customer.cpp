@@ -4,6 +4,9 @@
 // from a customers list of accounts
 // Customer.cpp
 #include "Customer.h"
+#include <iostream>
+#include <iterator>
+
 
 // constructor
 // preconditions: valid customer details passed in
@@ -97,4 +100,21 @@ bool Customer::hasAccount(int accountID){
 bool Customer::hasAcocunt(void){
 
 	return !_accounts.empty();
+}
+
+string Customer::operator<< (const Customer &rhs){
+
+	Customer temp = rhs;
+	string delimited =
+		temp._userID + "," +
+		temp._password + "," +
+		temp._name + "," +
+		temp._phoneNumber + ",";
+		set<int> accounts = temp.getAccounts();
+		set<int>::iterator iter;
+		for(iter = accounts.begin(); iter != accounts.end(); ++iter){
+		
+			delimited += *iter + ";";
+		}
+		return delimited += "," + NUM_FIELDS;
 }

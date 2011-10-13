@@ -6,6 +6,7 @@
 // below zero
 
 #include "SavingsAccount.h"
+#include <boost/lexical_cast.hpp>
 	
 // constructor
 // precondition: valid account details passed in
@@ -42,6 +43,18 @@ void SavingsAccount::incrementBalance(double amount){
 void SavingsAccount::decrementBalance(double amount){
 
 	_balance -=amount;
+}
+
+string SavingsAccount::operator<< (const SavingsAccount &rhs){
+
+	SavingsAccount temp = rhs;
+	string delimited =
+		temp._accountID + "," +
+		temp._accountName + "," +
+		boost::lexical_cast<std::string>(temp._interestRate)
+		 + "," +
+		boost::lexical_cast<std::string>(temp._balance);	
+		return delimited += "," + NUM_FIELDS;
 }
 
 

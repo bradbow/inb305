@@ -36,8 +36,9 @@ public:
 	// is less than balance
 	// postcondition: balance decremented by amount
 	void decrementBalance(double amount);
-
+	string operator<< (const SavingsAccount &rhs);
 private:
+	static const int NUM_FIELDS = 4;
 
 };
 #endif

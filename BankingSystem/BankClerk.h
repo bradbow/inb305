@@ -17,8 +17,10 @@ public:
 	// precondition: none
 	// postcondition: memory deallocated
 	~BankClerk(void);
+	string operator<< (const BankClerk &rhs);
 
 private:
+	static const int NUM_FIELDS = 2;
 
 };
 #endif

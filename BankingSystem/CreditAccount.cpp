@@ -5,6 +5,7 @@
 // and decrement the account balance
 
 #include "CreditAccount.h"
+#include <boost/lexical_cast.hpp>
 
 
 // constructor
@@ -54,5 +55,18 @@ void CreditAccount::incrementBalance(double amount){
 void CreditAccount::decrementBalance(double amount){
 
 	_balance -= amount;
+}
+
+string CreditAccount::operator<< (const CreditAccount &rhs){
+
+	CreditAccount temp = rhs;
+	string delimited =
+		temp._accountID + "," +
+		temp._accountName + "," +
+		boost::lexical_cast<std::string>(temp._interestRate)
+		 + "," +
+		boost::lexical_cast<std::string>(temp._balance) + "," +
+		boost::lexical_cast<std::string>(temp._overdraftLimit);
+ 		return delimited;
 }
 

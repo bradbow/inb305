@@ -18,3 +18,12 @@ BankClerk::~BankClerk(void)
 {
 }
 
+string BankClerk::operator<< (const BankClerk &rhs){
+
+	BankClerk temp = rhs;
+	string delimited =
+		temp._userID + "," +
+		temp._password + ",";
+		return delimited += "," + NUM_FIELDS;
+}
+

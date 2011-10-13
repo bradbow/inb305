@@ -5,6 +5,7 @@
 // the account balance which may never fall below zero
 
 #include "HomeLoanAccount.h"
+#include <boost/lexical_cast.hpp>
 
 // constructor
 // precondition: valid account details passed in
@@ -76,4 +77,20 @@ void HomeLoanAccount::setMinimumRepayment(double amount){
 void HomeLoanAccount::decrementBalance(double amount){
 
 	_balance -= amount;
+}
+
+string HomeLoanAccount::operator<< (const HomeLoanAccount &rhs){
+
+	HomeLoanAccount temp = rhs;
+	string delimited =
+		temp._accountID + "," +
+		temp._accountName + "," +
+		boost::lexical_cast<std::string>(temp._interestRate)
+		 + "," +
+		boost::lexical_cast<std::string>(temp._balance) + "," +
+		temp._propertyAddress; + "," +
+		static_cast<int>(temp._option);
+		delimited += "," +
+		boost::lexical_cast<std::string>(temp._minimumRepayment);
+ 		return delimited;
 }
