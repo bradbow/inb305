@@ -95,6 +95,7 @@
     <ClCompile Include="date.cpp" />
     <ClCompile Include="Deposit.cpp" />
     <ClCompile Include="HomeLoanAccount.cpp" />
+    <ClCompile Include="IdentifierObject.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SavingsAccount.cpp" />
     <ClCompile Include="Temp.cpp">
@@ -128,6 +129,7 @@
     <ClInclude Include="CreditAccount.h" />
     <ClInclude Include="DataInterface.h" />
     <ClInclude Include="Identifier.h" />
+    <ClInclude Include="IdentifierObject.h" />
     <ClInclude Include="IdMap.h" />
     <ClInclude Include="DataSource.h" />
     <ClInclude Include="date.h" />

@@ -189,6 +189,7 @@
     </ClCompile>
     <ClCompile Include="date.cpp" />
     <ClCompile Include="Temp.cpp" />
+    <ClCompile Include="IdentifierObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
@@ -263,6 +264,9 @@
       <Filter>Data Structures\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Identifier.h">
+      <Filter>Data Structures\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentifierObject.h">
       <Filter>Data Structures\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

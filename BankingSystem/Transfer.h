@@ -7,7 +7,7 @@ class Transfer : public Transaction
 {
 public:
 	
-	Transfer(int id, double amount, int customerId, date dt, int toAccId, int fromAccId);
+	Transfer(Identifier<int> id, double amount, int customerId, date dt, int toAccId, int fromAccId);
 	virtual void execute();
 
 private:

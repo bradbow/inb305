@@ -4,13 +4,13 @@
 
 #include "Transaction.h"
 #include <string>
-#include "Identifier.h"
+#include "IdentifierObject.h"
 using std::string;
 
 #ifndef _ACCOUNT_H
 #define _ACCOUNT_H 
 
-class Account
+class Account : public IdentifierObject<int>
 {
 public:
 	
@@ -29,9 +29,7 @@ public:
 	// precondition: none
 	// postcondition: memory deallocated
 	~Account(void);
-	// precondition: none
-	// postcondition: accountID returned
-	Identifier<int> getAccountID(void);
+
 	// precondition: valid accountName passed in
 	// postcondition: accountName set
 	void setAccountName(string accountName);
@@ -49,7 +47,7 @@ public:
 	double getBalance(void);
 
 private:
-	Identifier<int> _accountID;
+
 	int _customerID;
 	accountType _type;
 	string _accountName;

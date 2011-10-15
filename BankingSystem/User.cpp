@@ -4,8 +4,8 @@
 // constructor
 // precondition: valid user details passed in
 // postcondition: user is created
-User::User(Identifier<int> userID, string password) :
-_userID(userID), _password(password)
+User::User(Identifier<int> userID, string password) 
+	: IdentifierObject(userID), _password(password)
 {
 }
 
@@ -14,11 +14,4 @@ _userID(userID), _password(password)
 // postcondition: memory deallocated
 User::~User(void)
 {
-}
-
-// precondition: none
-// postcondition: userName returned
-Identifier<int> User::getUserID(){
-
-	return _userID;
 }

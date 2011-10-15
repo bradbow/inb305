@@ -10,20 +10,20 @@
 Account::Account(Identifier<int> accountID,
 				string accountName,
 				double interestRate, 
-				double balance){}
+				double balance) : IdentifierObject<int>(accountID)
+{
+	
+	_accountName = accountName;
+	_interestRate = interestRate;
+	_balance = balance;
+
+}
 // TODO Jeff: nothing happening in constructor?
 
 // destructor
 // precondition: none
 // postcondition: memory deallocated
 Account::~Account(void){}
-
-// precondition: none
-// postcondition: accountID returned
-Identifier<int> Account::getAccountID(void){
-	
-	return _accountID;
-}
 
 // precondition: none
 // postcondition: accountName returned

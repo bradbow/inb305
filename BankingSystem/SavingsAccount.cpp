@@ -49,7 +49,7 @@ string SavingsAccount::operator<< (const SavingsAccount &rhs){
 
 	SavingsAccount temp = rhs;
 	string delimited =
-		temp._accountID.getId() + "," +
+		temp.getIdentifier().getId() + "," +
 		temp._accountName + "," +
 		boost::lexical_cast<std::string>(temp._interestRate)
 		 + "," +

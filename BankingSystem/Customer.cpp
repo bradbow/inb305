@@ -106,7 +106,7 @@ string Customer::operator<< (const Customer &rhs){
 
 	Customer temp = rhs;
 	string delimited =
-		temp._userID.getId() + "," +
+		temp.getIdentifier().getId() + "," +
 		temp._password + "," +
 		temp._name + "," +
 		temp._phoneNumber + ",";
