@@ -29,7 +29,7 @@ public:
 	// precondition: none
 	// postcondition: an AccountSerices is returned, if none is alreay
 	// available one is created then returned
-	AccountServices *instance(void);
+	static AccountServices *instance(void);
 	// precondition: valid parameters passed in
 	// postcondition: a savings account is created and returned
 	SavingsAccount *createSavingsAccount (int accountID, string accountName, 

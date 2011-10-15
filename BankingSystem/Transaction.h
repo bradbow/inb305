@@ -2,6 +2,7 @@
 #ifndef _TRANSACTION_H
 #define _TRANSACTION_H
 #include <string>
+#include "AccountServices.h"
 
 //#include "date.h"
 #include <boost\date_time\gregorian\gregorian.hpp>
@@ -14,7 +15,10 @@ public:
 	
 	Transaction (int id, double amount, int customerId, date dt)
 	{
-		_id = id; _amount = amount; _customerId = customerId; _date = dt;
+		_id = id; 
+		_amount = amount; 
+		_customerId = customerId; 
+		_date = dt;
 	}
 
 	virtual void execute(){}
@@ -24,7 +28,7 @@ public:
 	int getCustomerId(){return _customerId;}
 	date getDate(){return _date;}
 
-private:
+protected:
 
 	int _id;
 	double _amount;

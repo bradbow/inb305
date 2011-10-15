@@ -47,6 +47,8 @@ public:
 
 	int getAccountId(){return _accountId;}
 
+	accountType getAccountType(){return _type;}
+
 private:
 
 	int _accountId;
