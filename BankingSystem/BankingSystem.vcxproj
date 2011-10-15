@@ -51,7 +51,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>C:\Program Files\boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,25 +80,48 @@
     <None Include="BankClerks.txt" />
     <None Include="CreditAccounts.txt" />
     <None Include="Customers.txt" />
+    <None Include="DepositTransactions.txt" />
     <None Include="HomeLoanAccounts.txt" />
     <None Include="ReadMe.txt" />
     <None Include="SavingsAccounts.txt" />
+    <None Include="TransferTransactions.txt" />
+    <None Include="WithdrawalTransactions.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="AccountServices.cpp" />
     <ClCompile Include="CreditAccount.cpp" />
     <ClCompile Include="DataInterface.cpp" />
+    <ClCompile Include="date.cpp" />
+    <ClCompile Include="Deposit.cpp" />
     <ClCompile Include="HomeLoanAccount.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SavingsAccount.cpp" />
+    <ClCompile Include="Temp.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MinimalRebuild>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Default</BasicRuntimeChecks>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Async</ExceptionHandling>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</MinimalRebuild>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Default</BasicRuntimeChecks>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Async</ExceptionHandling>
+    </ClCompile>
     <ClCompile Include="TextFileDataSource.cpp" />
     <ClCompile Include="Transaction.cpp" />
+    <ClCompile Include="Transfer.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserServices.cpp" />
     <ClCompile Include="BankClerk.cpp" />
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Withdrawal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
@@ -107,15 +130,27 @@
     <ClInclude Include="DataInterface.h" />
     <ClInclude Include="DataMap.h" />
     <ClInclude Include="DataSource.h" />
+    <ClInclude Include="date.h" />
+    <ClInclude Include="Deposit.h" />
     <ClInclude Include="HomeLoanAccount.h" />
+    <ClInclude Include="IController.h" />
+    <ClInclude Include="IModel.h" />
+    <ClInclude Include="IObserver.h" />
+    <ClInclude Include="ISubject.h" />
+    <ClInclude Include="IView.h" />
     <ClInclude Include="SavingsAccount.h" />
+    <ClInclude Include="Temp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TextFileDataSource.h" />
     <ClInclude Include="Transaction.h" />
+    <ClInclude Include="Transfer.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserServices.h" />
     <ClInclude Include="BankClerk.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="Withdrawal.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BankingSystem.rc" />
@@ -126,6 +161,11 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Temp.resx">
+      <DependentUpon>Temp.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

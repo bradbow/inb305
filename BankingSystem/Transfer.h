@@ -7,7 +7,7 @@ class Transfer : public Transaction
 {
 public:
 	
-	Transfer(int id, double amount, int customerId, date dt, int toAccId, int fromAccId);
+	Transfer(int id, double amount, int customerId, std::string dt, int toAccId, int fromAccId);
 	virtual void execute();
 
 private:

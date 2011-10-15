@@ -71,6 +71,45 @@
     <Filter Include="Utils\Source Files">
       <UniqueIdentifier>{d7808c9e-824c-4e68-b458-de83bf296da4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MVC">
+      <UniqueIdentifier>{92d9d6ff-a74f-4aff-9638-2f807c3018f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Models">
+      <UniqueIdentifier>{e93aca57-8c14-4a99-9283-dce92d7707e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Views">
+      <UniqueIdentifier>{ae02bb5e-e42f-4d3a-82f8-aeca32460422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Controllers">
+      <UniqueIdentifier>{0e66039b-af8f-4f30-aff9-c763649efb06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Controllers\Headers">
+      <UniqueIdentifier>{6ce109fd-f330-41c7-8cae-bc58de749324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Controllers\Source">
+      <UniqueIdentifier>{77199988-8fa1-4d61-904a-d5601a36e1e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Views\Header">
+      <UniqueIdentifier>{c4b4f2a6-bf21-45f5-a521-5957f5c418d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Views\Source">
+      <UniqueIdentifier>{72f5a698-87a6-4426-9769-d9158600af87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Models\Header">
+      <UniqueIdentifier>{694b34e3-4330-4cd0-a457-24f626898975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Models\Source">
+      <UniqueIdentifier>{6f2723a8-dbac-4612-9d1a-3b25791ddc4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Framework">
+      <UniqueIdentifier>{f1dc260e-e4c7-4b27-a2c8-f1fff328e6fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Framework\Header">
+      <UniqueIdentifier>{f8ee4ef3-e7d0-4c81-9f8f-2d27d653ff24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Framework\Source">
+      <UniqueIdentifier>{54bc250b-f2bb-4f92-9c50-9a4b395982d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -87,6 +126,15 @@
       <Filter>Persistence\Data Files</Filter>
     </None>
     <None Include="HomeLoanAccounts.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
+    <None Include="DepositTransactions.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
+    <None Include="TransferTransactions.txt">
+      <Filter>Persistence\Data Files</Filter>
+    </None>
+    <None Include="WithdrawalTransactions.txt">
       <Filter>Persistence\Data Files</Filter>
     </None>
   </ItemGroup>
@@ -133,6 +181,17 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Utils\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Deposit.cpp">
+      <Filter>Transactions\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transfer.cpp">
+      <Filter>Transactions\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Withdrawal.cpp">
+      <Filter>Transactions\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="date.cpp" />
+    <ClCompile Include="Temp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
@@ -179,6 +238,32 @@
     </ClInclude>
     <ClInclude Include="Utils.h">
       <Filter>Utils\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Deposit.h">
+      <Filter>Transactions\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Withdrawal.h">
+      <Filter>Transactions\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="date.h" />
+    <ClInclude Include="Transfer.h">
+      <Filter>Transactions\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Temp.h" />
+    <ClInclude Include="IController.h">
+      <Filter>MVC\Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IView.h">
+      <Filter>MVC\Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IModel.h">
+      <Filter>MVC\Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IObserver.h">
+      <Filter>MVC\Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ISubject.h">
+      <Filter>MVC\Framework\Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

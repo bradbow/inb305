@@ -21,8 +21,9 @@ public:
 		SAVINGS_ACCOUNTS,
 		CREDIT_CARD_ACCOUNTS,
 		HOME_LOAN_ACCOUNTS,
-		TRANSACTIONS,
-		LAST_USER_ID,
+		WITHDRAWALS,
+		DEPOSITS,
+		TRANSFERS,
 		NUMBER_OF_FILES
 	};
 
@@ -52,7 +53,9 @@ protected:
 	void ConstructAndAddSavingsAccount(string line);
 	void ConstructAndAddCreditAccount(string line);
 	void ConstructAndAddHomeLoanAccount(string line);
-	void ConstructAndAddTransaction(string line);
+	void ConstructAndAddWithdrawalTransaction(string line);
+	void ConstructAndAddDepositTransaction(string line);
+	void ConstructAndAddTransferTransaction(string line);
 
 	// last user id
 	int m_nLastUserId;

@@ -6,6 +6,9 @@
 #include "SavingsAccount.h"
 #include "CreditAccount.h"
 #include "HomeLoanAccount.h"
+#include "Withdrawal.h"
+#include "Deposit.h"
+#include "Transfer.h"
 #include <fstream>
 #include <string>
 #include "Utils.h"
@@ -27,6 +30,9 @@ TextFileDataSource::TextFileDataSource(std::string rgstrFileNames[])
 	m_pfns[SAVINGS_ACCOUNTS] = &TextFileDataSource::ConstructAndAddSavingsAccount;
 	m_pfns[CREDIT_CARD_ACCOUNTS] = &TextFileDataSource::ConstructAndAddCreditAccount;
 	m_pfns[HOME_LOAN_ACCOUNTS] = &TextFileDataSource::ConstructAndAddHomeLoanAccount;
+	m_pfns[WITHDRAWALS] = &TextFileDataSource::ConstructAndAddWithdrawalTransaction;
+	m_pfns[DEPOSITS] = &TextFileDataSource::ConstructAndAddDepositTransaction;
+	m_pfns[TRANSFERS] = &TextFileDataSource::ConstructAndAddTransferTransaction;
 
 	// Read txt files and populate collections
 	ReadTextFilesAndConstructObjects(rgstrFileNames);
@@ -236,8 +242,89 @@ void TextFileDataSource::ConstructAndAddHomeLoanAccount(string line)
 
 }
 
-void TextFileDataSource::ConstructAndAddTransaction(string line)
+void TextFileDataSource::ConstructAndAddWithdrawalTransaction(string line)
 {
+
+	enum
+	{
+		ID,
+		AMOUNT,
+		CUSTOMER_ID,
+		DATE,
+		ACCOUNT_ID,
+		NUM_FIELDS
+	};
+
+	vector<string> lineSplit = StringUtils::splitString(line, ',');
+
+	Withdrawal w
+	(
+		TypeConverter(lineSplit[ID]),
+		TypeConverter(lineSplit[AMOUNT]),
+		TypeConverter(lineSplit[CUSTOMER_ID]),
+		lineSplit[DATE],
+		TypeConverter(lineSplit[ACCOUNT_ID])
+	);
+
+	_transactions->Add(w);
+
+}
+
+void TextFileDataSource::ConstructAndAddDepositTransaction(string line)
+{
+
+	enum
+	{
+		ID,
+		AMOUNT,
+		CUSTOMER_ID,
+		DATE,
+		ACCOUNT_ID,
+		NUM_FIELDS
+	};
+
+	vector<string> lineSplit = StringUtils::splitString(line, ',');
+
+	Deposit d
+	(
+		TypeConverter(lineSplit[ID]),
+		TypeConverter(lineSplit[AMOUNT]),
+		TypeConverter(lineSplit[CUSTOMER_ID]),
+		lineSplit[DATE],
+		TypeConverter(lineSplit[ACCOUNT_ID])
+	);
+
+	_transactions->Add(d);
+
+}
+
+void TextFileDataSource::ConstructAndAddTransferTransaction(string line)
+{
+
+	enum
+	{
+		ID,
+		AMOUNT,
+		CUSTOMER_ID,
+		DATE,
+		TO_ACCOUNT_ID,
+		FROM_ACCOUNT_ID,
+		NUM_FIELDS
+	};
+
+	vector<string> lineSplit = StringUtils::splitString(line, ',');
+
+	Transfer t
+	(
+		TypeConverter(lineSplit[ID]),
+		TypeConverter(lineSplit[AMOUNT]),
+		TypeConverter(lineSplit[CUSTOMER_ID]),
+		lineSplit[DATE],
+		TypeConverter(lineSplit[TO_ACCOUNT_ID]),
+		TypeConverter(lineSplit[FROM_ACCOUNT_ID])
+	);
+
+	_transactions->Add(t);
 
 }
 

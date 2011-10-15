@@ -28,13 +28,6 @@ DataInterface::DataInterface()
 {
 }
 
-DataInterface::~DataInterface(void)
-{
-
-	delete _data;
-
-}
-
 // --------------------------------------------------------------------------------------------- //
 // Member Methods
 

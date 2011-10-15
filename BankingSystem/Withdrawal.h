@@ -7,7 +7,7 @@ class Withdrawal : public Transaction
 {
 public:
 
-	Withdrawal(int id, double amount, int customerId, date dt, int accountId);
+	Withdrawal(int id, double amount, int customerId, std::string dt, int accountId);
 	virtual void execute();
 
 private:
