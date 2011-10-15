@@ -64,9 +64,4 @@ bool TypeConverter::isVariantOfTrue()
 		);
 }
 
-TypeConverter::operator Identifier<int>()
-{
-	return Identifier<int> (atoi(m_strData.c_str()));
-}
-
 // --------------------------------------------------------------------------------------------- //

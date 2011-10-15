@@ -7,7 +7,7 @@ class Withdrawal : public Transaction
 {
 public:
 
-	Withdrawal(Identifier<int> id, double amount, int customerId, date dt, int accountId);
+	Withdrawal(int id, double amount, int customerId, date dt, int accountId);
 	virtual void execute();
 
 private:

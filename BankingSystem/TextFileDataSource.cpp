@@ -14,16 +14,31 @@
 #include "Utils.h"
 
 using namespace std;
-IdMap<User>* TextFileDataSource::_users;
-IdMap<Account>* TextFileDataSource::_accounts;
-IdMap<Transaction>* TextFileDataSource::_transactions;
+IdMap<int, User*> TextFileDataSource::_users;
+IdMap<int, Account*> TextFileDataSource::_accounts;
+IdMap<int, Transaction*> TextFileDataSource::_transactions;
+DataSource* TextFileDataSource::_ds;
+std::string* TextFileDataSource::_fileNames; 
+
 
 // --------------------------------------------------------------------------------------------- //
-// constructors / destructors
+// constructors / destructors / instance retrieval
 
-TextFileDataSource::TextFileDataSource(std::string rgstrFileNames[])
+DataSource* TextFileDataSource::getInstance()
 {
 
+	if (_ds == NULL)
+	{
+		_ds = new TextFileDataSource();
+	}
+
+	return _ds;
+
+}
+
+TextFileDataSource::TextFileDataSource()
+{
+	
 	// fill out function pointer array
 	m_pfns[CUSTOMERS] = &TextFileDataSource::ConstructAndAddCustomer;
 	m_pfns[BANK_CLERKS] = &TextFileDataSource::ConstructAndAddBankClerk;
@@ -34,45 +49,31 @@ TextFileDataSource::TextFileDataSource(std::string rgstrFileNames[])
 	m_pfns[DEPOSITS] = &TextFileDataSource::ConstructAndAddDepositTransaction;
 	m_pfns[TRANSFERS] = &TextFileDataSource::ConstructAndAddTransferTransaction;
 
-	// Read txt files and populate collections
-	ReadTextFilesAndConstructObjects(rgstrFileNames);
+	IdMap<int, User*> _users;
+	IdMap<int, Account*> _accounts;
+	IdMap<int, Transaction*> _transactions;
 
 }
 
-TextFileDataSource::~TextFileDataSource()
+void TextFileDataSource::setFileNames(std::string fileNames[])
 {
+	_fileNames = fileNames;//new string [NUMBER_OF_FILES];
+	/*for (int i = 0; i < NUMBER_OF_FILES; i++)
+	{
+		_fileNames[i] = fileNames[i];
+	}*/
 }
 
 // --------------------------------------------------------------------------------------------- //
 // member methods
 
-bool TextFileDataSource::persistUsers(IdMap<User>* users)
+void TextFileDataSource::loadData()
 {
-	return true;
-}
-
-bool TextFileDataSource::persistAccounts(IdMap<Account>* accounts)
-{
-	return true;
-}
-
-bool TextFileDataSource::persistTransactions(IdMap<Transaction>* transactions)
-{
-	return true;
-}
-
-
-
-// --------------------------------------------------------------------------------------------- //
-// helper / utility methods
-
-bool TextFileDataSource::ReadTextFilesAndConstructObjects(string fileNames[])
-{
-	
 	for (int nFile = 0; nFile < NUMBER_OF_FILES; nFile++)
 	{
+		// TODO assert on array size
 		std::ifstream rfsFile;
-		rfsFile.open(fileNames[nFile].c_str());
+		rfsFile.open(_fileNames[nFile].c_str());
 		string line;
 
 		if (rfsFile)
@@ -91,12 +92,15 @@ bool TextFileDataSource::ReadTextFilesAndConstructObjects(string fileNames[])
 
 		rfsFile.close();
 	}
-
-	
-	// TODO Brad: return boolean or exception handling?
-	return true;
-	 
 }
+
+void TextFileDataSource::persistData()
+{
+
+}
+
+// --------------------------------------------------------------------------------------------- //
+// helper / utility methods
 
 void TextFileDataSource::ConstructAndAddCustomer(string line)
 {
@@ -115,7 +119,7 @@ void TextFileDataSource::ConstructAndAddCustomer(string line)
 	vector<string> accountIds = StringUtils::splitString(lineSplit[ACCOUNT_IDS], ';');
 
 	// create customer
-	Customer c
+	Customer* c = new Customer
 	(
 		TypeConverter(lineSplit[USER_ID]),
 		lineSplit[PASSWORD],
@@ -128,10 +132,10 @@ void TextFileDataSource::ConstructAndAddCustomer(string line)
 	vector<string>::iterator vit;
 	for (vit = accountIds.begin(); vit != accountIds.end(); ++vit)
 	{
-		c.addAccount(TypeConverter(*vit));
+		c->addAccount(TypeConverter(*vit));
 	}
 
-	_users->Add(c);
+	_users.add(c->getUserId(), c);
 
 }
 
@@ -152,7 +156,7 @@ void TextFileDataSource::ConstructAndAddBankClerk(string line)
 		lineSplit[PASSWORD]
 	);
 
-	_users->Add(bc);
+	_users.add(bc.getUserId(), &bc);
 }
 
 void TextFileDataSource::ConstructAndAddSavingsAccount(string line)
@@ -176,7 +180,7 @@ void TextFileDataSource::ConstructAndAddSavingsAccount(string line)
 		TypeConverter(lineSplit[BALANCE])
 	);
 
-	_accounts->Add(sa);
+	_accounts.add(sa.getAccountId(), &sa);
 
 }
 
@@ -203,7 +207,7 @@ void TextFileDataSource::ConstructAndAddCreditAccount(string line)
 		TypeConverter(lineSplit[LIMIT])
 	);
 
-	_accounts->Add(ca);
+	_accounts.add(ca.getAccountId(), &ca);
 
 }
 
@@ -238,7 +242,7 @@ void TextFileDataSource::ConstructAndAddHomeLoanAccount(string line)
 		TypeConverter(lineSplit[MIN_REPAYMENT])
 	);
 
-	_accounts->Add(hla);
+	_accounts.add(hla.getAccountId(), &hla);
 
 }
 
@@ -267,7 +271,7 @@ void TextFileDataSource::ConstructAndAddWithdrawalTransaction(string line)
 		TypeConverter(lineSplit[ACCOUNT_ID])
 	);
 
-	_transactions->Add(w);
+	_transactions.add(w.getId(), &w);
 
 }
 
@@ -296,7 +300,7 @@ void TextFileDataSource::ConstructAndAddDepositTransaction(string line)
 		TypeConverter(lineSplit[ACCOUNT_ID])
 	);
 
-	_transactions->Add(d);
+	_transactions.add(d.getId(), &d);
 
 }
 
@@ -327,7 +331,7 @@ void TextFileDataSource::ConstructAndAddTransferTransaction(string line)
 		TypeConverter(lineSplit[FROM_ACCOUNT_ID])
 	);
 
-	_transactions->Add(t);
+	_transactions.add(t.getId(), &t);
 
 }
 

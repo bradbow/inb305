@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include "HomeLoanAccount.h"
-#include "Identifier.h"
 using namespace std;
 
 class StringUtils
@@ -19,7 +18,6 @@ public:
 	operator int();
 	operator double();
 	operator bool();
-	operator Identifier<int>();
 
 private:
 	string m_strData;

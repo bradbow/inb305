@@ -169,9 +169,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Application\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataInterface.cpp">
-      <Filter>Persistence\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TextFileDataSource.cpp">
       <Filter>Persistence\Source Files</Filter>
     </ClCompile>
@@ -222,9 +219,6 @@
     <ClInclude Include="BankClerk.h">
       <Filter>Users\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataInterface.h">
-      <Filter>Persistence\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DataSource.h">
       <Filter>Persistence\Header Files</Filter>
     </ClInclude>
@@ -261,12 +255,6 @@
       <Filter>MVC\Framework\Header</Filter>
     </ClInclude>
     <ClInclude Include="IdMap.h">
-      <Filter>Data Structures\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Identifier.h">
-      <Filter>Data Structures\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IdentifierObject.h">
       <Filter>Data Structures\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

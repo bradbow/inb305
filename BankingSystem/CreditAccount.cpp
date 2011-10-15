@@ -61,7 +61,7 @@ string CreditAccount::operator<< (const CreditAccount &rhs){
 
 	CreditAccount temp = rhs;
 	string delimited =
-		temp.getIdentifier().getId() + "," +
+		temp.getAccountId() + "," +
 		temp._accountName + "," +
 		boost::lexical_cast<std::string>(temp._interestRate)
 		 + "," +

@@ -1,13 +1,12 @@
 // User.h
 
 #include <string>
-#include "IdentifierObject.h"
 using std::string;
 
 #ifndef _USER_H
 #define _USER_H 
 
-class User : public IdentifierObject<int>
+class User
 {
 public:
 
@@ -24,14 +23,17 @@ public:
 	// constructor
 	// precondition: valid user details passed in
 	// postcondition: user is created
-	User(Identifier<int> userId, string password);
+	User(int userId, string password);
 	// destructor
 	// precondition: none
 	// postcondition: memory deallocated
 	~User(void);
 
+	int getUserId(){return _userId;}
+
 private:
 
+	int _userId;
 	string _password;
 	string _userName;
 	UserType m_utType;

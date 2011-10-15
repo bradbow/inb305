@@ -2,7 +2,7 @@
 
 Transfer::Transfer
 (
-	Identifier<int> id, double amount, int customerId, 
+	int id, double amount, int customerId, 
 	date dt, int toAccId, int fromAccId
 ) : Transaction(id, amount, customerId, dt)
 {

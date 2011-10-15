@@ -7,12 +7,13 @@
 // constructor
 // precondition: valid account details passed in
 // postcondition: an account is created
-Account::Account(Identifier<int> accountID,
+Account::Account(int accountID,
 				string accountName,
 				double interestRate, 
-				double balance) : IdentifierObject<int>(accountID)
+				double balance)
 {
 	
+	_accountId = accountID;
 	_accountName = accountName;
 	_interestRate = interestRate;
 	_balance = balance;

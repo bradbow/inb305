@@ -22,7 +22,7 @@ string BankClerk::operator<< (const BankClerk &rhs){
 
 	BankClerk temp = rhs;
 	string delimited =
-		temp.getIdentifier().getId() + "," +
+		temp.getUserId() + "," +
 		temp._password + ",";
 		return delimited += "," + NUM_FIELDS;
 }

@@ -4,8 +4,8 @@
 // constructor
 // precondition: valid user details passed in
 // postcondition: user is created
-User::User(Identifier<int> userID, string password) 
-	: IdentifierObject(userID), _password(password)
+User::User(int userID, string password) 
+	: _userId(userID), _password(password)
 {
 }
 

@@ -4,13 +4,12 @@
 
 #include "Transaction.h"
 #include <string>
-#include "IdentifierObject.h"
 using std::string;
 
 #ifndef _ACCOUNT_H
 #define _ACCOUNT_H 
 
-class Account : public IdentifierObject<int>
+class Account
 {
 public:
 	
@@ -21,7 +20,7 @@ public:
 	// constructor
 	// precondition: valid account details passed in
 	// postcondition: an account is created
-	Account(Identifier<int> accountID,
+	Account(int accountID,
 			string accountName,
 			double interestRate, 
 			double balance);
@@ -46,8 +45,11 @@ public:
 	// postcondition: balance returned
 	double getBalance(void);
 
+	int getAccountId(){return _accountId;}
+
 private:
 
+	int _accountId;
 	int _customerID;
 	accountType _type;
 	string _accountName;
