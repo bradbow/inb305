@@ -1,6 +1,7 @@
 // User.h
 
 #include <string>
+#include "Identifier.h"
 using std::string;
 
 #ifndef _USER_H
@@ -23,17 +24,17 @@ public:
 	// constructor
 	// precondition: valid user details passed in
 	// postcondition: user is created
-	User(int userName, string password);
+	User(Identifier<int> userId, string password);
 	// destructor
 	// precondition: none
 	// postcondition: memory deallocated
 	~User(void);
 	// precondition: none
 	// postcondition: userName returnded
-	int getUserID();
+	Identifier<int> getUserID();
 
 private:
-	int _userID;
+	Identifier<int> _userID;
 	string _password;
 	string _userName;
 	UserType m_utType;

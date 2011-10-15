@@ -38,9 +38,9 @@ private:
 	static DataInterface* _data;
 
 	// data collections
-	static DataMap<User>* _users;
-	static DataMap<Account>* _accounts;
-	static DataMap<Transaction>* _transactions;
+	static IdMap<User>* _users;
+	static IdMap<Account>* _accounts;
+	static IdMap<Transaction>* _transactions;
 
 };
 

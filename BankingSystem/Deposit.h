@@ -5,7 +5,7 @@ class Deposit : public Transaction
 {
 public:
 
-	Deposit(int id, double amount, int customerId, std::string dt, int accountId);
+	Deposit(int id, double amount, int customerId, date dt, int accountId);
 	
 	virtual void execute();
 

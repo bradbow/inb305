@@ -1,5 +1,5 @@
 #pragma once
-#include "DataMap.h"
+#include "IdMap.h"
 #include "User.h"
 #include "Account.h"
 #include "Transaction.h"
@@ -19,12 +19,12 @@ public:
 	virtual ~DataSource(void){};
 
 	// member functions: these are the functionalities all valid data sources must provide
-	virtual bool persistUsers(DataMap<User>* users) = 0;
-	virtual bool persistAccounts(DataMap<Account>* accounts) = 0;
-	virtual bool persistTransactions(DataMap<Transaction>* transactions) = 0;
-	virtual DataMap<User>* getUsersCollection() = 0;
-	virtual DataMap<Account>* getAccountsCollection() = 0;
-	virtual DataMap<Transaction>* getTransactionsCollection() = 0;
+	virtual bool persistUsers(IdMap<User>* users) = 0;
+	virtual bool persistAccounts(IdMap<Account>* accounts) = 0;
+	virtual bool persistTransactions(IdMap<Transaction>* transactions) = 0;
+	virtual IdMap<User>* getUsersCollection() = 0;
+	virtual IdMap<Account>* getAccountsCollection() = 0;
+	virtual IdMap<Transaction>* getTransactionsCollection() = 0;
 
 };
 

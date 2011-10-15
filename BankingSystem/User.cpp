@@ -4,7 +4,7 @@
 // constructor
 // precondition: valid user details passed in
 // postcondition: user is created
-User::User(int userID, string password) :
+User::User(Identifier<int> userID, string password) :
 _userID(userID), _password(password)
 {
 }
@@ -18,7 +18,7 @@ User::~User(void)
 
 // precondition: none
 // postcondition: userName returned
-int User::getUserID(){
+Identifier<int> User::getUserID(){
 
 	return _userID;
 }

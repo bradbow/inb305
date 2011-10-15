@@ -7,7 +7,7 @@
 // constructor
 // precondition: valid account details passed in
 // postcondition: an account is created
-Account::Account(int accountID,
+Account::Account(Identifier<int> accountID,
 				string accountName,
 				double interestRate, 
 				double balance){}
@@ -20,8 +20,8 @@ Account::~Account(void){}
 
 // precondition: none
 // postcondition: accountID returned
-int Account::getAccountID(void){
-
+Identifier<int> Account::getAccountID(void){
+	
 	return _accountID;
 }
 

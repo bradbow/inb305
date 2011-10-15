@@ -3,9 +3,9 @@
 // --------------------------------------------------------------------------------------------- //
 // Static declarations
 
-DataMap<User>* DataInterface::_users;
-DataMap<Transaction>* DataInterface::_transactions;
-DataMap<Account>* DataInterface::_accounts;
+IdMap<User>* DataInterface::_users;
+IdMap<Transaction>* DataInterface::_transactions;
+IdMap<Account>* DataInterface::_accounts;
 DataInterface* DataInterface::_data = NULL;
 DataSource* DataInterface::_src = NULL;
 

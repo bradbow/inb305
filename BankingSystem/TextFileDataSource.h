@@ -32,19 +32,19 @@ public:
 	virtual ~TextFileDataSource(void);
 
 	// member methods
-	virtual bool persistUsers(DataMap<User>* users);
-	virtual bool persistAccounts(DataMap<Account>* accounts);
-	virtual bool persistTransactions(DataMap<Transaction>* transactions);
-	virtual DataMap<User>* getUsersCollection(){return _users;}
-	virtual DataMap<Account>* getAccountsCollection(){return _accounts;}
-	virtual DataMap<Transaction>* getTransactionsCollection(){return _transactions;}
+	virtual bool persistUsers(IdMap<User>* users);
+	virtual bool persistAccounts(IdMap<Account>* accounts);
+	virtual bool persistTransactions(IdMap<Transaction>* transactions);
+	virtual IdMap<User>* getUsersCollection(){return _users;}
+	virtual IdMap<Account>* getAccountsCollection(){return _accounts;}
+	virtual IdMap<Transaction>* getTransactionsCollection(){return _transactions;}
 
 protected: 
 
 	// object collections
-	static DataMap<User>* _users;
-	static DataMap<Account>* _accounts;
-	static DataMap<Transaction>* _transactions;
+	static IdMap<User>* _users;
+	static IdMap<Account>* _accounts;
+	static IdMap<Transaction>* _transactions;
 
 	// helper methods
 	bool ReadTextFilesAndConstructObjects(std::string fileNames[]);

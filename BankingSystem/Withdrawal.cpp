@@ -3,7 +3,7 @@
 Withdrawal::Withdrawal
 (
 	int id, double amount, int customerId, 
-	std::string dt, int accountId
+	date dt, int accountId
 ) : Transaction(id, amount, customerId, dt)
 {
 	

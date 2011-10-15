@@ -1,5 +1,5 @@
 #include "TextFileDataSource.h"
-#include "DataMap.h"
+#include "IdMap.h"
 #include "User.h"
 #include "BankClerk.h"
 #include "Customer.h"
@@ -14,9 +14,9 @@
 #include "Utils.h"
 
 using namespace std;
-DataMap<User>* TextFileDataSource::_users;
-DataMap<Account>* TextFileDataSource::_accounts;
-DataMap<Transaction>* TextFileDataSource::_transactions;
+IdMap<User>* TextFileDataSource::_users;
+IdMap<Account>* TextFileDataSource::_accounts;
+IdMap<Transaction>* TextFileDataSource::_transactions;
 
 // --------------------------------------------------------------------------------------------- //
 // constructors / destructors
@@ -46,17 +46,17 @@ TextFileDataSource::~TextFileDataSource()
 // --------------------------------------------------------------------------------------------- //
 // member methods
 
-bool TextFileDataSource::persistUsers(DataMap<User>* users)
+bool TextFileDataSource::persistUsers(IdMap<User>* users)
 {
 	return true;
 }
 
-bool TextFileDataSource::persistAccounts(DataMap<Account>* accounts)
+bool TextFileDataSource::persistAccounts(IdMap<Account>* accounts)
 {
 	return true;
 }
 
-bool TextFileDataSource::persistTransactions(DataMap<Transaction>* transactions)
+bool TextFileDataSource::persistTransactions(IdMap<Transaction>* transactions)
 {
 	return true;
 }
@@ -256,13 +256,14 @@ void TextFileDataSource::ConstructAndAddWithdrawalTransaction(string line)
 	};
 
 	vector<string> lineSplit = StringUtils::splitString(line, ',');
+	date dt = from_string(lineSplit[DATE]);
 
 	Withdrawal w
 	(
 		TypeConverter(lineSplit[ID]),
 		TypeConverter(lineSplit[AMOUNT]),
 		TypeConverter(lineSplit[CUSTOMER_ID]),
-		lineSplit[DATE],
+		dt,
 		TypeConverter(lineSplit[ACCOUNT_ID])
 	);
 
@@ -284,13 +285,14 @@ void TextFileDataSource::ConstructAndAddDepositTransaction(string line)
 	};
 
 	vector<string> lineSplit = StringUtils::splitString(line, ',');
+	date dt = from_string(lineSplit[DATE]);
 
 	Deposit d
 	(
 		TypeConverter(lineSplit[ID]),
 		TypeConverter(lineSplit[AMOUNT]),
 		TypeConverter(lineSplit[CUSTOMER_ID]),
-		lineSplit[DATE],
+		dt,
 		TypeConverter(lineSplit[ACCOUNT_ID])
 	);
 
@@ -313,13 +315,14 @@ void TextFileDataSource::ConstructAndAddTransferTransaction(string line)
 	};
 
 	vector<string> lineSplit = StringUtils::splitString(line, ',');
+	date dt = from_string(lineSplit[DATE]);
 
 	Transfer t
 	(
 		TypeConverter(lineSplit[ID]),
 		TypeConverter(lineSplit[AMOUNT]),
 		TypeConverter(lineSplit[CUSTOMER_ID]),
-		lineSplit[DATE],
+		dt,
 		TypeConverter(lineSplit[TO_ACCOUNT_ID]),
 		TypeConverter(lineSplit[FROM_ACCOUNT_ID])
 	);

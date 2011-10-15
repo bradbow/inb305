@@ -3,7 +3,7 @@
 Transfer::Transfer
 (
 	int id, double amount, int customerId, 
-	std::string dt, int toAccId, int fromAccId
+	date dt, int toAccId, int fromAccId
 ) : Transaction(id, amount, customerId, dt)
 {
 	

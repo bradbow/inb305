@@ -51,7 +51,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -114,7 +114,6 @@
       <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Async</ExceptionHandling>
     </ClCompile>
     <ClCompile Include="TextFileDataSource.cpp" />
-    <ClCompile Include="Transaction.cpp" />
     <ClCompile Include="Transfer.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserServices.cpp" />
@@ -128,7 +127,8 @@
     <ClInclude Include="AccountServices.h" />
     <ClInclude Include="CreditAccount.h" />
     <ClInclude Include="DataInterface.h" />
-    <ClInclude Include="DataMap.h" />
+    <ClInclude Include="Identifier.h" />
+    <ClInclude Include="IdMap.h" />
     <ClInclude Include="DataSource.h" />
     <ClInclude Include="date.h" />
     <ClInclude Include="Deposit.h" />

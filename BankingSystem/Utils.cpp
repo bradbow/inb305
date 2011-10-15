@@ -43,18 +43,7 @@ TypeConverter::operator double()
 
 TypeConverter::operator bool()
 {
-	if (isVariantOfTrue()){
-		return true;
-	} 
-	else if (isVariantOfFalse())
-	{
-		return false;
-	}
-	else
-	{
-		//TODO Brad: think of soemthing better here...
-		return true;
-	}
+	return isVariantOfTrue();
 }
 
 bool TypeConverter::isVariantOfTrue()
@@ -75,22 +64,9 @@ bool TypeConverter::isVariantOfTrue()
 		);
 }
 
-bool TypeConverter::isVariantOfFalse()
+TypeConverter::operator Identifier<int>()
 {
-	return 
-		(
-			m_strData.compare("False")
-			||
-			m_strData.compare("false")
-			||
-			m_strData.compare("FALSE")
-			||
-			m_strData.compare("NO")
-			||
-			m_strData.compare("No")
-			||
-			m_strData.compare("no")
-		);
+	return Identifier<int> (atoi(m_strData.c_str()));
 }
 
 // --------------------------------------------------------------------------------------------- //

@@ -53,15 +53,6 @@
     <Filter Include="Persistence\Data Files">
       <UniqueIdentifier>{4ecc5869-4f55-488f-adea-8040c4981a05}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Collections">
-      <UniqueIdentifier>{ba8037d5-f921-40f7-b378-3c4381b674e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Collections\Header Files">
-      <UniqueIdentifier>{5cceb572-730b-4ab5-b564-e3b649b610aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Collections\Source Files">
-      <UniqueIdentifier>{caf26a01-26fb-476f-9531-566f6c7fa958}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{15e0fa65-94fa-495c-9859-c42592a5bcd2}</UniqueIdentifier>
     </Filter>
@@ -110,6 +101,15 @@
     <Filter Include="MVC\Framework\Source">
       <UniqueIdentifier>{54bc250b-f2bb-4f92-9c50-9a4b395982d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data Structures">
+      <UniqueIdentifier>{ba8037d5-f921-40f7-b378-3c4381b674e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Structures\Header Files">
+      <UniqueIdentifier>{5cceb572-730b-4ab5-b564-e3b649b610aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Structures\Source Files">
+      <UniqueIdentifier>{caf26a01-26fb-476f-9531-566f6c7fa958}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -150,9 +150,6 @@
     </ClCompile>
     <ClCompile Include="AccountServices.cpp">
       <Filter>Accounts\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Transaction.cpp">
-      <Filter>Transactions\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SavingsAccount.cpp">
       <Filter>Accounts\Source Files</Filter>
@@ -230,9 +227,6 @@
     <ClInclude Include="DataSource.h">
       <Filter>Persistence\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataMap.h">
-      <Filter>Collections\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TextFileDataSource.h">
       <Filter>Persistence\Header Files</Filter>
     </ClInclude>
@@ -265,10 +259,21 @@
     <ClInclude Include="ISubject.h">
       <Filter>MVC\Framework\Header</Filter>
     </ClInclude>
+    <ClInclude Include="IdMap.h">
+      <Filter>Data Structures\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Identifier.h">
+      <Filter>Data Structures\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BankingSystem.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Temp.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
